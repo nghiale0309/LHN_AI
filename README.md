@@ -110,7 +110,7 @@ Logistic Regression
 These modules serve as auxiliary components and benchmarking references.
 
 MIT License
-Author: Nguyen Hieu Nghia
+Author: Le Hieu Nghia
 Institution: Ho Chi Minh City University of Industry (IUH)
 
 This project is intended for scientific research and educational use in physics-informed machine learning and computational astrophysics.
