@@ -100,8 +100,8 @@ experiment = LensingExperiment(
 experiment.train(log_interval=500)
 
 results = experiment.evaluate_grid(xmin=-2, xmax=2, n=256)
-# results["psi"]        -> lensing potential
-# results["laplacian"]  -> reconstructed convergence
+results["psi"]        -> lensing potential
+results["laplacian"]  -> reconstructed convergence
 
 Additional Modules
 The library also includes optimized C++ implementations of:
@@ -122,7 +122,7 @@ This section describes how to build the backend, run the gravitational lensing s
 1. Environment Setup
 Before executing any experiment, the C++ backend must be compiled and installed into the current Python environment.
 
-# From the project root directory
+From the project root directory
 pip install -e .
 The -e (editable) mode allows modification of Python files without reinstallation.
 Any change to C++ source files (.cpp, .h) requires re-running this command to recompile the backend.
@@ -161,9 +161,9 @@ This benchmark demonstrates the advantage of forward-mode differentiation and pa
 4. Standard Machine Learning Modules (Auxiliary)
 The library includes optimized C++ implementations of standard regression algorithms for reference and benchmarking.
 
-# Linear Regression
+Linear Regression
 python tests/test1.py
-# Logistic Regression
+Logistic Regression
 python tests/test2.py
 
 These modules are not the primary focus of the library and serve as auxiliary examples of Eigen-based numerical optimization.
