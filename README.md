@@ -100,8 +100,8 @@ experiment = LensingExperiment(
 experiment.train(log_interval=500)
 
 results = experiment.evaluate_grid(xmin=-2, xmax=2, n=256)
-# results["psi"]        -> lensing potential
-# results["laplacian"]  -> reconstructed convergence
+results["psi"]        -> lensing potential
+results["laplacian"]  -> reconstructed convergence
 
 Additional Modules
 The library also includes optimized C++ implementations of:
@@ -110,7 +110,7 @@ Logistic Regression
 These modules serve as auxiliary components and benchmarking references.
 
 MIT License
-Author: Nguyen Hieu Nghia
+Author: Le Hieu Nghia
 Institution: Ho Chi Minh City University of Industry (IUH)
 
 This project is intended for scientific research and educational use in physics-informed machine learning and computational astrophysics.
@@ -122,53 +122,12 @@ This section describes how to build the backend, run the gravitational lensing s
 1. Environment Setup
 Before executing any experiment, the C++ backend must be compiled and installed into the current Python environment.
 
-# From the project root directory
+From the project root directory
 pip install -e .
 The -e (editable) mode allows modification of Python files without reinstallation.
 Any change to C++ source files (.cpp, .h) requires re-running this command to recompile the backend.
 
-2. Gravitational Lensing Simulation (Core Experiment)
-This experiment trains a Physics-Informed Neural Network (SIREN) to solve the Poisson equation for gravitational lensing:
-∇2𝜓(𝑥,𝑦) = 2𝜅(𝑥,𝑦)
-where 𝜓 is the lensing potential and κ is the convergence (projected mass density).
-
-python tests/thau_kinh_hap_dan.py
-
-What the script does:
-Samples spatial coordinates (𝑥,𝑦) on the lens plane
-Trains a SIREN network to approximate 𝜓(𝑥,𝑦)
-Enforces the Poisson equation via physics-informed loss terms
-Computes spatial derivatives using forward-mode automatic differentiation
-
-Expected Output
-Console logs showing training progress (iteration, total loss, PDE residuals)
-
-Visualization or saved arrays of:
-Reconstructed lensing potential 𝜓(𝑥,𝑦)
-Laplacian ∇2𝜓 corresponding to reconstructed convergence 𝜅
-The emergence of ring-like structures in the reconstructed fields indicates successful gravitational lensing behavior.
-
-3. Performance Benchmark (C++ / OpenMP Backend)
-This benchmark evaluates the computational efficiency of the C++ backend with OpenMP parallelization.
-python tests/benchmark_lensing.py
-
-Evaluation Criteria
-Time per epoch: Expected to be 3–6× faster than pure Python-based PINN implementations on CPU
-CPU utilization: OpenMP should scale across available cores
-Stability: Consistent loss reduction without numerical instability
-This benchmark demonstrates the advantage of forward-mode differentiation and parallelized batch training for PDE-constrained learning.
-
-4. Standard Machine Learning Modules (Auxiliary)
-The library includes optimized C++ implementations of standard regression algorithms for reference and benchmarking.
-
-# Linear Regression
-python tests/test1.py
-# Logistic Regression
-python tests/test2.py
-
-These modules are not the primary focus of the library and serve as auxiliary examples of Eigen-based numerical optimization.
-
-5. Troubleshooting
+2. Troubleshooting
 ModuleNotFoundError
 Ensure the command pip install -e . was executed in the project root directory
 Verify that the active Python environment matches the one used for installation
