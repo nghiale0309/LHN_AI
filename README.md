@@ -54,22 +54,22 @@ Vectorized linear algebra via Eigen
 OpenMP-based batch training for efficient CPU utilization
 (train_batch_poisson.cpp)
 
-Project Structure
+# Project Structure
+```text
 lhn_AI/
 ├── include/lhn/
-│   ├── physics/          # PINN core: nodes, layers, trainers
-│   ├── core/             # Optimizers and utilities
+│   ├── physics/         # PINN core: nodes, layers, trainers
+│   ├── core/            # Optimizers and utilities
 │   ├── LinearRegression.h
 │   └── LogisticRegression.h
 ├── src/
-│   ├── bindings.cpp      # Pybind11 module definitions
-│   ├── train_batch_poisson.cpp  # OpenMP-parallel PINN training
-│   └── ...
+│   ├── bindings.cpp     # Pybind11 module definitions
+│   └── train_batch_poisson.cpp # OpenMP-parallel PINN training
 ├── lhn_AI/
-│   ├── physics.py        # High-level Python API for lensing experiments
-│   └── ...
-├── extern/               # Third-party dependencies (Eigen, pybind11)
-└── tests/                # Benchmarks and validation scripts
+│   └── physics.py       # High-level Python API for lensing experiments
+├── extern/              # Third-party dependencies (Eigen, pybind11)
+└── tests/               # Benchmarks and validation scripts
+```
 
 Installation
 Prerequisites
