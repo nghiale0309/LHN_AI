@@ -1,0 +1,20 @@
+build/
+dist/
+*.egg-info/
+__pycache__/
+
+*.obj
+*.o
+*.lib
+*.dll
+*.so
+*.pyd
+*.exp
+*.exe
+
+.vscode/
+.idea/
+
+# Bỏ qua file hệ thống
+.DS_Store
+Thumbs.db
