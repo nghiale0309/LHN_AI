@@ -1,7 +1,7 @@
-lhn_AI
+LHN_AI
 A High-Performance Physics-Informed Machine Learning Library for Gravitational Lensing
 
-lhn_AI is a custom-built, high-performance Physics-Informed Machine Learning (PIML) library implemented in C++17 with Python bindings, designed for solving partial differential equations (PDEs) arising in astrophysical simulations, with a primary focus on gravitational lensing.
+LHN_AI is a custom-built, high-performance Physics-Informed Machine Learning (PIML) library implemented in C++17 with Python bindings, designed for solving partial differential equations (PDEs) arising in astrophysical simulations, with a primary focus on gravitational lensing.
 
 The library combines physics-based constraints, implicit neural representations, and a forward-mode automatic differentiation engine to efficiently solve the Poisson equation for lensing potential in a mesh-free manner.
 Core Contribution
@@ -56,7 +56,7 @@ OpenMP-based batch training for efficient CPU utilization
 
 # Project Structure
 ```text
-lhn_AI/
+LHN_AI/
 ├── include/lhn/
 │   ├── physics/         # PINN core: nodes, layers, trainers
 │   ├── core/            # Optimizers and utilities
@@ -80,7 +80,7 @@ Eigen3 (included or system-installed)
 
 Build from Source
 git clone https://github.com/nghiale0309/LHN_AI.git
-cd lhn_AI
+cd LHN_AI
 pip install -e .
 
 Note: OpenMP support is required to achieve full training performance.
