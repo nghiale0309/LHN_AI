@@ -4,14 +4,15 @@ A High-Performance Physics-Informed Machine Learning Library for Gravitational L
 LHN_AI is a custom-built, high-performance Physics-Informed Machine Learning (PIML) library implemented in C++17 with Python bindings, designed for solving partial differential equations (PDEs) arising in astrophysical simulations, with a primary focus on gravitational lensing.
 
 The library combines physics-based constraints, implicit neural representations, and a forward-mode automatic differentiation engine to efficiently solve the Poisson equation for lensing potential in a mesh-free manner.
-Core Contribution
+
+# Core Contribution
 This project introduces a physics-first neural computation framework that:
 Directly learns continuous physical fields using neural networks
 Computes first- and second-order spatial derivatives analytically during the forward pass
 Avoids the memory overhead and instability of reverse-mode backpropagation for high-order PDE constraints
 The approach is specifically optimized for gravitational lensing, where accurate Laplacians of the potential field are critical.
 
-Scientific Background
+# Scientific Background
 In gravitational lensing, the lensing potential 𝜓(𝑥,𝑦) is governed by the Poisson equation:
 ∇2𝜓(𝑥,𝑦) = 2𝜅(𝑥,𝑦)
 where 𝜅 is the convergence, representing the projected mass density of the lens.
@@ -30,7 +31,7 @@ The network is trained by minimizing a physics-informed loss:
 L = Ldata +λPoisson∥ ∇2ψnet− 2κtrue∥^2 +λgrad∥ ∇ψnet ∥^2
 All spatial derivatives are computed using custom forward-mode automatic differentiation, implemented at the C++ level.
 
-Key Features
+# Key Features
 High-Performance Hybrid Architecture
 Core computation written in C++17
 Python interface via pybind11
