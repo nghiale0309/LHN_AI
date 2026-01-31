@@ -104,13 +104,13 @@ results = experiment.evaluate_grid(xmin=-2, xmax=2, n=256)
 results["psi"]        -> lensing potential
 results["laplacian"]  -> reconstructed convergence
 
-Additional Modules
+# Additional Modules
 The library also includes optimized C++ implementations of:
 Linear Regression
 Logistic Regression
 These modules serve as auxiliary components and benchmarking references.
 
-MIT License
+# MIT License
 Author: Le Hieu Nghia
 Institution: Ho Chi Minh City University of Industry (IUH)
 
