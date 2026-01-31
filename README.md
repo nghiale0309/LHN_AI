@@ -117,7 +117,7 @@ Institution: Ho Chi Minh City University of Industry (IUH)
 This project is intended for scientific research and educational use in physics-informed machine learning and computational astrophysics.
 
 
-Running the Project:
+# Running the Project
 This section describes how to build the backend, run the gravitational lensing simulation, and evaluate both physical correctness and computational performance of the library.
 
 1. Environment Setup
@@ -143,7 +143,7 @@ Low CPU Utilization
 Check the environment variable:
 OMP_NUM_THREADS=<number_of_cores>
 
-Recommended Workflow
+# Recommended Workflow
 Run the gravitational lensing simulation to verify physical correctness
 Execute the benchmark to evaluate computational performance
 Modify network or loss parameters and repeat experiments
