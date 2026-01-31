@@ -144,8 +144,8 @@ Check the environment variable:
 OMP_NUM_THREADS=<number_of_cores>
 
 # Recommended Workflow
-Run the gravitational lensing simulation to verify physical correctness
-Execute the benchmark to evaluate computational performance
-Modify network or loss parameters and repeat experiments
+1. Run the gravitational lensing simulation to verify physical correctness
+2. Execute the benchmark to evaluate computational performance
+3. Modify network or loss parameters and repeat experiments
 
 This workflow is designed for reproducible scientific experiments in physics-informed machine learning and computational astrophysics.
