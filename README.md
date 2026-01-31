@@ -68,8 +68,7 @@ LHN_AI/
 │   └── train_batch_poisson.cpp # OpenMP-parallel PINN training
 ├── lhn_AI/
 │   └── physics.py       # High-level Python API for lensing experiments
-├── extern/              # Third-party dependencies (Eigen, pybind11)
-└── tests/               # Benchmarks and validation scripts
+├── extern/              # Third-party dependencies (Eigen, pybind11)        
 ```
 
 Installation
